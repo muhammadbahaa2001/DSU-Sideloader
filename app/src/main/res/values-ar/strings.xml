@@ -4,15 +4,19 @@
         Home screen
      -->
     <!-- Warning cards -->
+    <string name="unsupported">غير مدعوم</string>
     <string name="device_unsupported_description">جهازك لا يدعم الأقسام الديناميكية (DSU يتطلب الأقسام الديناميكية).</string>
     <string name="setup_storage">إعداد وحدة التخزين</string>
     <string name="setup_storage_description">تحتاج إلى تحديد مجلد لاستخدامه كمخزن للتطبيق (مطلوب لتخزين الملفات المؤقتة).\n\nالرجاء تحديد أو إنشاء مجلد جديد والسماح بالوصول إليه.</string>
     <string name="setup">إعداد</string>
     <string name="storage_warning">إنذار سعة التخزين</string>
+    <string name="storage_warning_description">لديك أقل من %1$s%% من مساحة التخزين الحرة، عملية التثبيت سوف تفشل، يرجى توفير بعض المساحة.</string>
     <string name="continue_anyway">إستمر على أي حال</string>
     <string name="missing_permission">إذن مفقود</string>
     <string name="missing_permission_description">DSU Sideloader يتطلب إذن READ_LOGS (الذي يسمح بقراءة logcat).\n يتم استخدام هذا الإذن للحصول على تقدم التثبيت وتشخيص الأخطاء في تثبيت.\n\n** قد يتطلب منح هذا الإذن إعادة تشغيل التطبيق.</string>
     <string name="granting_permission">في انتظار الخدمة لمنح الإذن، يرجى الانتظار…</string>
+    <string name="unlocked_bl_warn">محمل إقلاع مفتوح</string>
+    <string name="unlocked_bl_warn_desc">يتطلب DSU Sideloader محمل إقلاع مفتوح، وتثبيت الصور بحمل إقلاع مغلق قد يكون خطيراً في بعض الأجهزة، قبل استخدام هذا التطبيق، أنت: \n- يجب إلغاء قفل محمل الإقلاع.\n- يجب أن يكون لديك طريقة ما لاستعادة النظام الرسمي للجهاز.\n- أوصي بإجراء نسخة احتياطية كاملة.\nتم إنشاء هذا التطبيق ليستخدم من قبل المطورين والمستخدمين المتقدمين، وقد تم تحذيرك.</string>
     <!-- Installation card -->
     <string name="select_gsi_info">حدد ملفاً ليتم تثبيته</string>
     <string name="dsu_already_installed">عملية تثبيت DSU موجودة بالفعل.</string>
@@ -35,7 +39,7 @@
     <string name="processing">جارٍ المعالجة…</string>
     <!-- Installation -->
     <string name="installation_prompt">تم استدعاء طلب التثبيت، بانتظار تأكيد المستخدم للمتابعة..</string>
-    <string name="creating_partition">جارٍ إنشاء %1$s قسم…</string>
+    <string name="creating_partition">جارٍ إنشاء %1$s قسم...</string>
     <string name="installing_partition">جارٍ معالجة %1$s قسم…</string>
     <string name="installing">جارٍ التثبيت…</string>
     <!-- ADB install -->
@@ -60,17 +64,87 @@
     <string name="fs_features_error_description">قد تكون النواة الخاصة بك تسجيل f2fs في مسار مختلف الذي توقعه من GSI daemon، هناك بعض الإصلاحات التي يمكنك تجربتها:\n - تثبيت وحدة DSU Sideloader Magisk.\n - تغيير النواة.</string>
     <!-- SELinux error card -->
     <string name="selinux_error">خطأ SELinux</string>
+    <string name="selinux_error_description">يبدو أن رفض SELinux يمنع تثبيت DSU، هناك بعض الإصلاحات التي يمكنك تجربتها:\n - تثبيت إضافة DSU Sideloader Magisk.\n - إذا كنت تستخدم بطاقة SD، فحاول إلغاء تحميلها (يوجد خيار لذلك في الإعدادات).\n - قم بتغيير SELinux إلى مسموح به (غير مستحسن، لأنه يضعف أمان جهازك).</string>
+    <string name="selinux_error_action">إعادة المحاولة بالسماح</string>
+    <!-- Extents error card -->
+    <string name="extents_error_title">خطأ في الإضافات</string>
+    <string name="extents_error_description">على أجهزة أندرويد 10، تحتاج الصور/نظام الملفات إلى أكثر من 512 درجة، هناك بعض الإصلاحات التي يمكنك تجربتها:\n - تثبيت إضافة DSU Sideloader Magisk.</string>
     <!-- Other errors card -->
     <string name="failed_create_partition">فشل في إنشاء قسم %1$s.</string>
+    <string name="unknown_error">خطأ غير معروف.</string>
+    <string name="error">خطأ</string>
+    <string name="try_again">حاول مجددًا</string>
+    <string name="view_logs">عرض السجلات</string>
+    <string name="installation_canceled">تم إلغاء عملية التثبيت.</string>
+    <!-- Cancel installation dialog -->
+    <string name="cancel_installation_question">إلغاء عملية التثبيت؟</string>
+    <string name="cancel_installation_description">سيتم فقدان كل التقدم الذي تم إحرازه، هل أنت متأكد؟</string>
+    <!-- Installation finished card -->
+    <string name="installation_finished_rootless">تم تثبيت الصورة بنجاح، تحقق من الإشعارات الخاصة بك للدخول إلى النظام ديناميكي.</string>
+    <string name="installation_finished">تم الانتهاء من التثبيت.</string>
+    <string name="reboot_into_dsu">إعادة التشغيل إلى DSU</string>
+    <!-- Userdata card -->
+    <string name="userdata_size">حجم بيانات المستخدم</string>
+    <string name="userdata_size_info">الحجم بالجيجابايت</string>
+    <string name="allowed_userdata_allocation">الحد الأقصى المتاح للتخصيص: %1$sGB</string>
+    <!-- Image size card -->
+    <string name="image_size">حجم الصورة</string>
+    <string name="image_size_info">الحجم بالبايت</string>
+    <string name="not_recommended_option">هذا الخيار غير مستحسن على الإطلاق!</string>
+    <!-- Image size dialog -->
+    <string name="dialog_image_size">تعيين حجم الصورة؟</string>
+    <string name="dialog_image_size_description">سيقوم DSU Sideloader بتعيين هذه المعلمة لك تلقائياً، وتعيين حجم الصورة يدوياً غير مستحسن.</string>
+    <string name="set_anyway">تعيين على أي حال</string>
+    <!-- What is DSU card -->
+    <string name="what_is_dsu">ما هو DSU؟</string>
+    <string name="what_is_dsu_description">DSU (تحديثات النظام الديناميكي) هي ميزة تم تقديمها في Android 10 تسمح للمطورين باختبار صور نظام Android دون لمس أقسام الجهاز، مع أندرويد 11، يمكن أيضا DSU استبدال أقسام متعددة.</string>
+    <string name="view_docs">عرض المستندات</string>
+    <string name="learn_more">معرفة المزيد</string>
+    <!--
+        Settings screen
+    -->
+    <string name="settings">الإعدادات</string>
+    <string name="experimental_feature">المميزات التجريبية</string>
+    <string name="experimental_feature_description">هذه الميزة قيد الاختبار وربما تكون غير مستقرة، هل أنت متأكد؟</string>
+    <string name="builtin_installer">المثبت المدمج</string>
+    <string name="builtin_installer_description">أسرع، استخدم واجهة برمجة التطبيقات الداخلية لتثبيت الصور مباشرةً</string>
+    <string name="requires_root">يتطلب روت</string>
+    <string name="unmount_sd_title">إلغاء تحميل بطاقة SD</string>
+    <string name="unmount_sd_description">إلغاء التحميل بطاقة SD مؤقتاً عند التثبيت</string>
+    <string name="warning_storage_check_title">تحذير</string>
+    <string name="warning_storage_check_description">سيؤدي تثبيت DSU إلى تخصيص بعض المساحة الحرة على جهازك، وقد يؤدي تعطيل عمليات التحقق من التخزين إلى حدوث أخطاء.\nلا يوصى بهذا الخيار. استمر فقط إذا كنت تعرف ما تفعله!</string>
+    <string name="storage_check_title">تعطيل التحقق من التخزين</string>
+    <string name="storage_check_description">تعطيل التحقق من تخزين بيانات المستخدم، غير مستحسن</string>
+    <string name="full_logcat_logging_title">تسجيل السجل الكامل</string>
+    <string name="full_logcat_logging_description">قسم السجلات سوف يلتقط السجلات بدون فلاتر ، قد يؤدي إلى تدهور أداء التطبيق</string>
+    <string name="keep_screen_on">إبقاء الشاشة مفتوحة</string>
+    <string name="developer_options">خيارات المطورين</string>
+    <string name="other">غير ذلك</string>
+    <string name="operation_mode">وضع التشغيل</string>
+    <string name="about">حول</string>
+    <string name="about_description">الإتمان والمكتبات والمزيد…</string>
     <!--
         About screen
     -->
+    <string name="version_info">الإصدار: %1$s (%2$d)</string>
+    <string name="check_updates_title">تحقق من وجود تحديثات</string>
+    <string name="check_updates_text_idle">اضغط للتحقق</string>
+    <string name="check_updates_text_found">تم العثور على إصدار %1$s جديد</string>
+    <string name="check_updates_text_updated">يتم تشغيل أحدث إصدار</string>
+    <string name="changelog">سجل التغييرات</string>
+    <string name="download">تنزيل</string>
+    <string name="application">تطبيق</string>
+    <string name="developer_options_enabled">خيارات المطورين ممكنة</string>
+    <string name="developer_options_disabled">خيارات المطورين معطلة</string>
+    <string name="github_repo">مستودع GitHub</string>
+    <string name="github_repo_description">رمز المصدر على GitHub</string>
     <string name="collaborators">المتعاونون</string>
     <string name="libraries_title">المكتبات</string>
     <string name="libraries_description">المكتبات المستخدمة في هذا التطبيق</string>
     <string name="role_developer">المطور</string>
     <string name="role_design_icon">مرجع التصميم، أيقونة التطبيق</string>
     <string name="translators_title">المترجمون</string>
+    <string name="translators_list" comment="Hello translator, since you have translated our app, feel free to put your name inside &quot;translators_list&quot;, it will be shown on about screen.&#10;If there is more than one translator, append names and separate each one by using a comma, like:&#10;Collaborator 1, Collaborator 2, Collaborator 3">muhammadbahaa2001</string>
     <string name="contributors_title">المساهمون</string>
     <string name="contributors_text">الأشخاص الذين ساعدوا في هذا المشروع</string>
     <!--
@@ -103,13 +177,4 @@
     <string name="discard">تجاهل</string>
     <string name="close_app">إغلاق التطبيق</string>
     <string name="close_app_question">إغلاق التطبيق؟</string>
-
-    <!--
-        Hello translator, since you have translated our app
-        feel free to put your name inside "translators_list", it will be shown on about screen.
-
-        If there is more than one translator, append names and separate each one by using a comma, like:
-        Collaborator 1, Collaborator 2, Collaborator 3
-    -->
-    <string name="translators_list" comment="translators_list&#10;Hello translator, since you have translated our app, feel free to put your name inside &quot;translators_list&quot;, it will be shown on about screen.&#10;If there is more than one translator, append names and separate each one by using a comma, like:&#10;Collaborator 1, Collaborator 2, Collaborator 3">muhammadbahaa2001</string>
 </resources>
